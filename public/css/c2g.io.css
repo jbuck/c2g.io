@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+
+.c2gio-map {
+  height: 100%;
+  width: 100%;
+}
