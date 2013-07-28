@@ -7,11 +7,13 @@
 
 L.tileLayer('http://{s}.tile.cloudmade.com/a277366792ab4b41adec150c78d0ea5b/997/256/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-    maxZoom: 18
+    maxZoom: 17
   }).addTo(map);
 
-  map.locate({setView: true, maxZoom: 18})
+  map.locate({setView: true, maxZoom: 17})
     .on("locationfound", function(e) {
+      L.circle(e.latlng, e.accuracy).addTo(map);
+
       var pos = e.latlng;
 
       city = locations.reduce(function(prev, curr) {
