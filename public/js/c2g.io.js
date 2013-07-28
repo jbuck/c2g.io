@@ -22,7 +22,9 @@ L.tileLayer('http://{s}.tile.cloudmade.com/a277366792ab4b41adec150c78d0ea5b/997/
         return curr;
       });
 
-      console.log(pos, city);
+      $.getJSON("/api/vehicles/" + city.loc, function(data) {
+        L.geoJson(data).addTo(map);
+      });
     })
     .on("locationerror", function(e) {
       console.log(e);
